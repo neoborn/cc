@@ -120,11 +120,11 @@ $ git checkout gh-pages
   <h1>Services</h1>
     <p>Centralized Repository of all Service Provider in Singapore!</p>
     <form name="service-form" novalidate>
-    Name: <input type="text" ng-model="service.name" />
-    Description: <textarea ng-model="service.description"></textarea>
-    Address: <input type="text" ng-model="service.address" />
-    Minimum Cost: <input type="number" ng-model="service.mincost" />
-    Maximum Cost: <input type="number" ng-model="service.maxcost" />
+      Name: <input type="text" ng-model="service.name" /><br />
+      Description: <textarea ng-model="service.description"></textarea><br />
+      Address: <input type="text" ng-model="service.address" /><br />
+      Minimum Cost: <input type="number" ng-model="service.mincost" /><br />
+      Maximum Cost: <input type="number" ng-model="service.maxcost" /><br />
     
     <input type="submit" ng-click="addService(service)" value="Add">
     </form>
