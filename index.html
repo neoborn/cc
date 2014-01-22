@@ -107,64 +107,48 @@ $ git checkout gh-pages
       //Whatever you put on the controller scope,
       //will be availalble in the HTML element bound to the controller.
       function MyController($scope){
-        $scope.newMessage = "put image url here";
-        $scope.messages = ["http://www.gravatar.com/avatar/e8a86a5cb2784f1e9834b2683fe8c032.png"]; 
+        $scope.services = [];
         
-        $scope.add = function(){
-          $scope.messages.push($scope.newMessage);
+        $scope.addService = function(service){
+          $scope.services.push(service);
         };
       }
     </script>
   </header>
   
   <body ng-controller="MyController">
-  <h1>IUC (Image URL Creator)</h1>
-    <p>The easiest way of putting an image in your webpage!
-    <br>No HTML code required.<br>grab an image online.<br>paste it below.<br>and enjoy!</p>
-     
-    <input type="text" ng-model="newMessage">
-    <input type="submit" ng-click="add()" value="Add to List">
-    <br>
+  <h1>Services</h1>
+    <p>Centralized Repository of all Service Provider in Singapore!</p>
+    <form name="service-form" novalidate>
+    Name: <input type="text" ng-model="service.name" />
+    Description: <textarea ng-model="service.description"></textarea>
+    Address: <input type="text" ng-model="service.address" />
+    Minimum Cost: <input type="number" ng-model="service.mincost" />
+    Maximum Cost: <input type="number" ng-model="service.maxcost" />
     
-    <ul>
-      <li ng-repeat="message in messages">
-        <img src="{{message}}" width="64px" height="64px" />
-      </li>
-    </ul>
-    
-    <h2>Oh, one more thing. try say "hello"</h2>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/1.1.0/annyang.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  
-<script>
-"use strict";
-
-if (annyang) {
-    console.log("load success");
-  
-    var hello = function() {
-        $("#hello").html("hello there");
-    };
-    
-    
-    // Let's define a command.
-    var commands = {
-        'hello': hello
-    };
-
-    annyang.debug();
-    
-    // Initialize annyang with our commands
-    annyang.init(commands);
-
-    // Start listening.
-    annyang.start();
-} else {
-  console.log("load fail");
-}
-</script>
-<div id="hello"></div>
-  
+    <input type="submit" ng-click="addService(service)" value="Add">
+    </form>
+    <table width="100%">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Addres</th>
+								<th>Minimum Cost</th>
+								<th>Maximum Cost</th>
+								<th>Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="service in services">
+								<td>{{service.name}}</td>
+                <td>{{service.address}}</td>
+								<td>${{service.mincost}}</td>
+								<td>${{service.maxcost}}</td>
+								<td>{{event.description}}</td>
+							</tr>
+						</tbody>
+					</table>
+   
     <p>&copy; Kawi 2014</p>
     
   </body>
