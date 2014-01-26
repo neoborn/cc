@@ -1,156 +1,75 @@
-<!--<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=640" />
-
-    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
-    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
-
-    <script type="text/javascript" src="javascripts/modernizr.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#main_content').headsmart()
-      })
-    </script>
-    <title>Cloud Com by neoborn</title>
-  </head>
-
-  <body>
-    <a id="forkme_banner" href="https://github.com/neoborn/cc">View on GitHub</a>
-    <div class="shell">
-
-      <header>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <h1>Cloud Com</h1>
-            <h2>cc</h2>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-      </header>
-
-      <section id="downloads">
-        <span class="inner">
-          <a href="https://github.com/neoborn/cc/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/neoborn/cc/tarball/master" class="tgz"><em>download</em> .TGZ</a>
-        </span>
-      </section>
-
-
-      <span class="banner-fix"></span>
-
-
-      <section id="main_content">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-
-      <footer>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <p>this project by <a href="https://github.com/neoborn">neoborn</a> can be found on <a href="https://github.com/neoborn/cc">GitHub</a></p>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
-        <span class="octocat"></span>
-      </footer>
-
-    </div>
-
-    
-  </body>
-</html>-->
-
 <!doctype html>
-<html ng-app="app">
-  <header>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.js"></script>
-    <script language="javascript" type="text/javascript">
-      angular.module('app', []);
-      
-      //Whatever you put on the controller scope,
-      //will be availalble in the HTML element bound to the controller.
-      function MyController($scope){
-        $scope.services = [];
-        
-        $scope.addService = function(service){
-          $scope.services.push(service);
-        };
-      }
-    </script>
-  </header>
-  
-  <body ng-controller="MyController">
-  <h1>Services</h1>
-    <p>Centralized Repository of all Service Provider in Singapore!</p>
-    <form name="service-form" novalidate>
-      Name: <input type="text" ng-model="service.name" /><br />
-      Description: <textarea ng-model="service.description"></textarea><br />
-      Address: <input type="text" ng-model="service.address" /><br />
-      Minimum Cost: <input type="number" ng-model="service.mincost" /><br />
-      Maximum Cost: <input type="number" ng-model="service.maxcost" /><br />
-    
-    <input type="submit" ng-click="addService(service)" value="Add">
-    </form>
-    <table width="100%">
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Addres</th>
-								<th>Minimum Cost</th>
-								<th>Maximum Cost</th>
-								<th>Description</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr ng-repeat="service in services">
-								<td>{{service.name}}</td>
-                <td>{{service.address}}</td>
-								<td>${{service.mincost}}</td>
-								<td>${{service.maxcost}}</td>
-								<td>{{event.description}}</td>
-							</tr>
-						</tbody>
-					</table>
-   
-    <p>&copy; Kawi 2014</p>
-    
-  </body>
-  
+<html class="no-js" lang="en" ng-app>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>evnt</title>
+
+  <link rel="stylesheet" href="vendors/foundation/css/normalize.css" />
+  <link rel="stylesheet" href="vendors/foundation/css/foundation.min.css" />
+  <style>
+  .main-content {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  #branding {
+    position: relative;
+    top: 250px;
+    left: 25%;
+    width: 500px;
+  }
+
+  </style>
+  <script src="vendors/modernizr.js"></script>
+  <script src="vendors/angular.min.js"></script>
+</head>
+
+<body>
+
+  <div class="contain-to-grid">
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+          <h1><a href="#">SMAPS</a></h1>
+        </li>
+      </ul>
+
+
+      <section class="top-bar-section">
+        <ul class="left">
+          <li class="divider"></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="demo.html">Demo</a></li>
+          <li class="divider"></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+
+  <div class="row">
+
+    <div ng-controller="MainCtrl">
+      <div class="main-content">
+        <div id="branding">
+
+          <h1><i>smaps</i></h1>
+          <p>Manage & Share Pictures the Right Way!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="vendors/jquery.min.js"></script>
+  <script src="vendors/foundation/js/foundation.min.js"></script>
+
+  <script type="text/javascript">
+  $(document).foundation();
+  </script>
+
+</body>
+
+
 </html>
